@@ -1,0 +1,38 @@
+baseURL = "https://junguk03.github.io/security_portfolio/"
+languageCode = "ko-kr"
+title = "정욱 · Security Notes"
+enableRobotsTXT = true
+
+[params]
+  author = "정욱"
+  handle = "junguk03"
+  tagline = "Security Researcher & Developer"
+  intro = "개발자의 시각으로 보안을 이해하고, 보안 전문가의 관점으로 시스템을 설계합니다."
+  github = "https://github.com/junguk03"
+  naver = "https://blog.naver.com/junkuk9503"
+
+[menus]
+  [[menus.main]]
+    name = "home"
+    pageRef = "/"
+    weight = 1
+  [[menus.main]]
+    name = "projects"
+    pageRef = "/projects"
+    weight = 2
+  [[menus.main]]
+    name = "blog"
+    pageRef = "/blog"
+    weight = 3
+  [[menus.main]]
+    name = "about"
+    pageRef = "/about"
+    weight = 4
+
+[markup.highlight]
+  style = "github-dark"
+  noClasses = true
+  codeFences = true
+
+[markup.goldmark.renderer]
+  unsafe = false

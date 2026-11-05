@@ -1,0 +1,48 @@
+{{ define "main" }}
+{{ $d := site.Data.projects }}
+<section class="hero">
+  <p class="cmd"><span class="prompt">$</span> whoami</p>
+  <h1>{{ site.Params.author }}</h1>
+  <p class="tagline">{{ site.Params.tagline }}</p>
+  <p class="lede">{{ site.Params.intro }}</p>
+  <p class="hero-links">
+    <a class="btn" href="{{ "/projects/" | relURL }}">Projects</a>
+    <a class="btn ghost" href="{{ "/about/" | relURL }}">About</a>
+  </p>
+</section>
+
+<section>
+  <p class="cmd"><span class="prompt">$</span> ls ./activities</p>
+  <h2>Activities</h2>
+  <ul class="timeline">
+    {{ range $d.activities }}
+    <li>
+      <span class="when">{{ .date }}</span>
+      <div><b>{{ .name }}</b> — {{ .desc }}{{ range .links }} <a href="{{ .url }}">{{ .label }}</a>{{ end }}</div>
+    </li>
+    {{ end }}
+  </ul>
+</section>
+
+<section>
+  <p class="cmd"><span class="prompt">$</span> cat ./featured</p>
+  <h2>Featured Project</h2>
+  {{ with index $d.security 0 }}{{ partial "project-card.html" . }}{{ end }}
+  <p><a href="{{ "/projects/" | relURL }}">모든 프로젝트 보기 →</a></p>
+</section>
+
+<section>
+  <p class="cmd"><span class="prompt">$</span> tail ./blog</p>
+  <h2>Recent Posts</h2>
+  {{ $posts := where site.RegularPages "Section" "blog" }}
+  {{ if $posts }}
+    <ul class="post-list">
+      {{ range first 5 $posts }}
+      <li><time>{{ .Date.Format "2006.01.02" }}</time> <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  {{ else }}
+    <p class="muted">이곳에 새 글이 쌓일 예정이에요. 지금까지의 학습 기록은 <a href="{{ site.Params.naver }}">네이버 블로그</a>에 있어요.</p>
+  {{ end }}
+</section>
+{{ end }}

@@ -1,0 +1,11 @@
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="{{ "/" | relURL }}"><span class="prompt">~/</span>{{ site.Params.handle }}</a>
+    <nav class="nav" aria-label="주요 메뉴">
+      {{ range site.Menus.main }}
+        <a href="{{ .URL }}"{{ if $.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+      <button class="theme-toggle" type="button" aria-label="다크/라이트 모드 전환" onclick="(function(){var r=document.documentElement;var cur=r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');var n=cur==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}})()">◐</button>
+    </nav>
+  </div>
+</header>

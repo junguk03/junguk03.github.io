@@ -1,0 +1,39 @@
+security:
+  - name: "GlassHouse CTF"
+    icon: "🪟"
+    role: "팀장 · 4인 팀"
+    period: "2026.10 ~"
+    desc: "보안 동아리 4명이 Flask로 원서 접수 서비스를 직접 만들고, 2명씩 두 조로 나눠 취약점을 심은 문제를 출제한 뒤 상대 조와 바꿔 푸는 CTF 구축 프로젝트. 소스는 공개하고 플래그만 비공개로 두는 화이트박스 방식으로, 공통 서비스 틀·디자인·깃 관리를 맡았습니다."
+    stack: ["Python", "Flask", "Jinja2", "Docker", "Playwright"]
+    links:
+      - { label: "GitHub", url: "https://github.com/junguk03/Write_Up_GlassHouse" }
+  - name: "Clash Royale 전적 검색"
+    icon: "🎮"
+    role: "개인"
+    desc: "Supercell API를 활용한 플레이어 통계 조회 서비스. Flutter Web + Node.js Express 백엔드로 구성되어 있으며, 현재 로컬 환경에서 보안 취약점 분석 학습용으로 활용 중입니다."
+    stack: ["Node.js", "Express", "Flutter", "AWS EC2"]
+    links:
+      - { label: "GitHub", url: "https://github.com/junguk03/ClashRoyalProject" }
+  - name: "Chatvas"
+    icon: "🤖"
+    role: "개인"
+    desc: "AI와 대화하며 UI를 디자인하고 코드로 변환하는 오픈소스 도구. Claude API를 활용한 대화형 디자인 솔루션으로, 현재 로컬에서 취약점 분석 학습용으로 활용 중입니다."
+    stack: ["Next.js", "TypeScript", "Claude API", "Tailwind"]
+    links:
+      - { label: "GitHub", url: "https://github.com/junguk03/Chatvas" }
+
+activities:
+  - name: "WHITEHAT 2026"
+    date: "2026.11.07"
+    desc: "국방부 주최·사이버작전사령부 주관 사이버 보안 경진대회 대학생부 출전. 팀 GlassHouse(수원대학교), 온라인 예선 참가."
+    links:
+      - { label: "대회 페이지", url: "https://whitehat2026.kr" }
+
+web:
+  - { name: "Text Counter", icon: "📝", desc: "실시간 글자수 세기 & 맞춤법 검사 도구. 공백 포함/제외 글자수, 단어수, 문장수를 실시간으로 카운팅합니다.", stack: ["HTML5", "CSS3", "JavaScript", "API"], demo: "https://junguk03.github.io/text-counter/", repo: "https://github.com/junguk03/text-counter" }
+  - { name: "CSS Gradient Generator", icon: "🎨", desc: "CSS 그라데이션을 시각적으로 생성하고 코드를 복사할 수 있는 도구입니다.", stack: ["JavaScript", "CSS3", "HTML5"], demo: "https://junguk03.github.io/CSS_gradient/", repo: "https://github.com/junguk03/CSS_gradient" }
+  - { name: "Unicode Text Converter", icon: "✨", desc: "영어와 숫자를 40가지 유니코드 스타일로 변환하는 도구입니다.", stack: ["JavaScript", "Unicode", "CSS3"], demo: "https://junguk03.github.io/text_font/", repo: "https://github.com/junguk03/text_font" }
+  - { name: "Icon Search", icon: "🔍", desc: "12개의 주요 무료 아이콘 라이브러리를 통합 검색하는 도구입니다.", stack: ["JavaScript", "HTML5", "CSS3"], demo: "https://junguk03.github.io/icon_search/", repo: "https://github.com/junguk03/icon_search" }
+  - { name: "Image Compressor", icon: "🖼️", desc: "서버 업로드 없이 브라우저에서 이미지를 압축하는 도구입니다.", stack: ["JavaScript", "Canvas API", "CSS3"], demo: "https://junguk03.github.io/image_compressor-/", repo: "https://github.com/junguk03/image_compressor-" }
+  - { name: "QR Made", icon: "📱", desc: "텍스트나 URL로 즉시 QR코드를 만들고 PNG로 내려받는 생성기입니다.", stack: ["JavaScript", "QRCode.js", "CSS3"], demo: "https://junguk03.github.io/QR_Made/", repo: "https://github.com/junguk03/QR_Made" }
+  - { name: "Random Nickname", icon: "🎲", desc: "게임·SNS용 랜덤 닉네임 생성기. 5가지 스타일과 글자수를 고를 수 있습니다.", stack: ["JavaScript", "LocalStorage", "CSS3"], demo: "https://junguk03.github.io/random_nickname/", repo: "https://github.com/junguk03/random_nickname" }

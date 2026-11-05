@@ -1,0 +1,38 @@
+{{ define "main" }}
+{{ $d := site.Data.projects }}
+<header class="page-head">
+  <p class="cmd"><span class="prompt">$</span> ls ./projects</p>
+  <h1>{{ .Title }}</h1>
+  <p class="lede">{{ .Description }}</p>
+</header>
+
+<section>
+  <h2>Security</h2>
+  <div class="grid">{{ range $d.security }}{{ partial "project-card.html" . }}{{ end }}</div>
+</section>
+
+<section>
+  <h2>Activities</h2>
+  <ul class="timeline">
+    {{ range $d.activities }}
+    <li><span class="when">{{ .date }}</span><div><b>{{ .name }}</b> — {{ .desc }}{{ range .links }} <a href="{{ .url }}">{{ .label }}</a>{{ end }}</div></li>
+    {{ end }}
+  </ul>
+</section>
+
+<section>
+  <h2>Web Development</h2>
+  <p class="muted">직접 개발하고 GitHub Pages로 배포한 웹 유틸리티</p>
+  <div class="grid small">
+    {{ range $d.web }}
+    <article class="card">
+      <div class="card-head"><span class="card-icon" aria-hidden="true">{{ .icon }}</span><h3>{{ .name }}</h3></div>
+      <p>{{ .desc }}</p>
+      <ul class="chips">{{ range .stack }}<li>{{ . }}</li>{{ end }}</ul>
+      <p class="card-links"><a href="{{ .demo }}">Live →</a><a href="{{ .repo }}">GitHub →</a></p>
+    </article>
+    {{ end }}
+  </div>
+  <p><a href="{{ site.Params.github }}">GitHub에서 더 보기 →</a></p>
+</section>
+{{ end }}

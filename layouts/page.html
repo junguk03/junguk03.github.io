@@ -1,0 +1,11 @@
+{{ define "main" }}
+<article class="prose">
+  <header class="page-head">
+    <p class="cmd"><span class="prompt">$</span> cat ./{{ .File.ContentBaseName }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ if eq .Section "blog" }}<p class="meta">{{ .Date.Format "2006.01.02" }}{{ with .Params.tags }} · {{ range . }}<span class="tag">#{{ . }}</span> {{ end }}{{ end }}</p>
+    {{ else }}{{ with .Description }}<p class="lede">{{ . }}</p>{{ end }}{{ end }}
+  </header>
+  {{ .Content }}
+</article>
+{{ end }}
