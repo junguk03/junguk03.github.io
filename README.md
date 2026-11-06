@@ -24,6 +24,6 @@ hugo server -D             # 초안까지 미리보기
 
 ## 배포
 
-1. GitHub `security_portfolio` 저장소에 이 폴더를 push (주소: https://junguk03.github.io/security_portfolio/)
+1. GitHub `junguk03.github.io` 저장소에 이 폴더를 push (주소: https://junguk03.github.io/)
 2. 저장소 Settings → Pages → Build and deployment → Source를 **GitHub Actions**로 선택
 3. 이후 main에 push 할 때마다 `.github/workflows/hugo.yml`이 자동으로 빌드·배포
