@@ -22,6 +22,14 @@ hugo server -D             # 초안까지 미리보기
 
 `data/projects.yaml`만 고치면 Home과 Projects 페이지에 같이 반영돼요.
 
+| 키 | 내용 |
+| --- | --- |
+| `studying` | 공부 중인 PortSwigger 진행률 (`done` / `total`, `updated` 날짜도 같이 고치기) |
+| `projects` | 주요 프로젝트 카드 |
+| `exploits` | 워게임 익스플로잇 코드 목록 |
+| `activities` | 대회·활동 |
+| `others` | 기타 프로젝트 (Projects 페이지 맨 아래에 짧은 설명만) |
+
 ## 배포
 
 1. GitHub `junguk03.github.io` 저장소에 이 폴더를 push (주소: https://junguk03.github.io/)

@@ -46,12 +46,25 @@ h3{font-size:18px;margin:0}
 .grid.small{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
 .card p{margin:10px 0}
-.card-head{display:flex;gap:12px;align-items:center}
-.card-icon{font-size:24px;line-height:1}
 .meta{font-size:14px;color:var(--muted);margin:2px 0 0}
 .chips{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:10px 0}
 .chips li{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12px;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--ink)}
 .card-links{display:flex;gap:14px;font-size:15px;margin-bottom:0}
+.card h3+.meta{margin-top:4px}
+.points{margin:10px 0;padding-left:1.2em;font-size:15.5px}
+.points li{margin:2px 0}
+.progress{list-style:none;padding:0;margin:12px 0}
+.progress li{display:grid;grid-template-columns:minmax(0,1fr) 120px 56px;gap:12px;align-items:center;padding:6px 0;font-size:15.5px}
+.progress .bar{height:8px;border-radius:999px;background:var(--line);overflow:hidden}
+.progress .bar span{display:block;height:100%;background:var(--accent)}
+.progress .count{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:13px;text-align:right}
+.progress li:has(.count.muted){grid-template-columns:minmax(0,1fr) auto}
+.vulns{display:grid;grid-template-columns:200px minmax(0,1fr);gap:6px 16px;margin:12px 0;font-size:15.5px}
+.vulns dt{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:13.5px;font-weight:600;padding-top:2px}
+.vulns dd{margin:0;color:var(--muted)}
+.others{list-style:none;padding:0;margin:0}
+.others li{padding:12px 0;border-bottom:1px solid var(--line)}
+.others p{margin:2px 0 0;font-size:15.5px;color:var(--muted)}
 .timeline{list-style:none;padding:0;margin:0;border-left:2px solid var(--line)}
 .timeline li{display:flex;gap:16px;padding:6px 0 6px 16px;position:relative}
 .timeline li::before{content:"";position:absolute;left:-6px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
@@ -74,4 +87,4 @@ h3{font-size:18px;margin:0}
 .footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:14px}
 .footer-inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .footer-links{display:flex;gap:16px}
-@media (max-width:560px){h1{font-size:30px}.nav{gap:12px}.timeline li{flex-direction:column;gap:2px}.when{flex:none}}
+@media (max-width:560px){h1{font-size:30px}.wrap{padding:0 16px}.topbar-inner{gap:8px}.brand{font-size:15px}.nav{gap:10px;font-size:13px}.theme-toggle{width:28px;height:28px}.vulns{grid-template-columns:1fr;gap:0}.vulns dd{margin-bottom:8px}.progress li{grid-template-columns:minmax(0,1fr) 72px 48px}.timeline li{flex-direction:column;gap:2px}.when{flex:none}}

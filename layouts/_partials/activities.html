@@ -1,0 +1,8 @@
+<ul class="timeline">
+  {{ range site.Data.projects.activities }}
+  <li>
+    <span class="when">{{ .date }}</span>
+    <div><b>{{ .name }}</b> — {{ .desc }}{{ range .links }} <a href="{{ .url }}">{{ .label }}</a>{{ end }}</div>
+  </li>
+  {{ end }}
+</ul>

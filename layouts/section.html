@@ -15,6 +15,6 @@
   {{ end }}
 </ul>
 {{ else }}
-<p class="muted">아직 글이 없어요. 지금까지의 학습 기록은 <a href="{{ site.Params.naver }}">네이버 블로그</a>에서 볼 수 있어요.</p>
+{{ partial "no-posts.html" . }}
 {{ end }}
 {{ end }}

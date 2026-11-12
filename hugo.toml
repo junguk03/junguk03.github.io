@@ -6,8 +6,8 @@ enableRobotsTXT = true
 [params]
   author = "정욱"
   handle = "junguk03"
-  tagline = "Security Researcher & Developer"
-  intro = "개발자의 시각으로 보안을 이해하고, 보안 전문가의 관점으로 시스템을 설계합니다."
+  tagline = "Web Security · 취약점 분석 공부 중"
+  intro = "수원대학교 정보보호학과 학생입니다. 웹 취약점 분석과 모의해킹을 공부하며, 직접 풀고 재현한 것만 실패한 시도까지 기록합니다."
   github = "https://github.com/junguk03"
   naver = "https://blog.naver.com/junkuk9503"
 

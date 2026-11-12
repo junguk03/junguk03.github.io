@@ -1,0 +1,20 @@
+{{ with site.Data.projects.studying }}
+<article class="card">
+  <h3>{{ .name }}</h3>
+  <p class="meta">랩 → 같은 유형 워게임 → n-day 재현 순서로 진행 · {{ .updated }} 기준</p>
+  <ul class="progress">
+    {{ range .tracks }}
+    <li>
+      <span class="topic">{{ .topic }}</span>
+      {{ if gt .total 0 }}
+        <span class="bar" role="img" aria-label="{{ .done }} / {{ .total }}"><span style="width: {{ div (mul .done 100) .total }}%"></span></span>
+        <span class="count">{{ .done }} / {{ .total }}</span>
+      {{ else }}
+        <span class="count muted">{{ .note }}</span>
+      {{ end }}
+    </li>
+    {{ end }}
+  </ul>
+  <p class="card-links"><a href="{{ .repo }}">진행 기록 →</a></p>
+</article>
+{{ end }}

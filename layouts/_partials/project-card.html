@@ -1,12 +1,8 @@
 <article class="card">
-  <div class="card-head">
-    <span class="card-icon" aria-hidden="true">{{ .icon }}</span>
-    <div>
-      <h3>{{ .name }}</h3>
-      <p class="meta">{{ with .role }}{{ . }}{{ end }}{{ with .period }} · {{ . }}{{ end }}</p>
-    </div>
-  </div>
+  <h3>{{ .name }}</h3>
+  <p class="meta">{{ with .role }}{{ . }}{{ end }}{{ with .period }} · {{ . }}{{ end }}</p>
   <p>{{ .desc }}</p>
+  {{ with .points }}<ul class="points">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
   {{ with .stack }}<ul class="chips">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
   {{ with .links }}<p class="card-links">{{ range . }}<a href="{{ .url }}">{{ .label }} →</a>{{ end }}</p>{{ end }}
 </article>
