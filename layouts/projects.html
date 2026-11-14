@@ -17,6 +17,11 @@
 </section>
 
 <section>
+  <h2>재현 · 제보 · 기여</h2>
+  {{ partial "research.html" . }}
+</section>
+
+<section>
   <h2>공부 중</h2>
   {{ partial "studying.html" . }}
 </section>
@@ -24,6 +29,15 @@
 <section>
   <h2>활동</h2>
   {{ partial "activities.html" . }}
+</section>
+
+<section>
+  <h2>자격증</h2>
+  <ul class="research">
+    {{ range $d.certs }}
+    <li><p class="meta">{{ .date }} · {{ .issuer }}</p><b>{{ .name }}</b>{{ with .note }} <span class="muted">({{ . }})</span>{{ end }}</li>
+    {{ end }}
+  </ul>
 </section>
 
 <section>

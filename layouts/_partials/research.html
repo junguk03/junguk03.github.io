@@ -1,0 +1,9 @@
+<ul class="research">
+  {{ range site.Data.projects.research }}
+  <li>
+    <p class="meta"><span class="kind">{{ .kind }}</span> · {{ .date }}</p>
+    <b>{{ .name }}</b>
+    <p>{{ .desc }}{{ range .links }} <a href="{{ .url }}">{{ .label }} →</a>{{ end }}</p>
+  </li>
+  {{ end }}
+</ul>

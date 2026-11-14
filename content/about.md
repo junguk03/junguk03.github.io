@@ -10,13 +10,17 @@ description: "웹 취약점 분석·모의해킹을 공부하는 정보보호학
 
 - 수원대학교 지능형SW융합대학 정보보호학과 (2학년)
 
+## 자격증
+
+- 정보처리기능사 (한국산업인력공단, 2024.04 합격 · 현 종목명 프로그래밍기능사)
+
 ## 공부하는 방식
 
 1. **PortSwigger Web Security Academy** 랩으로 취약점 유형을 익힌다
 2. 같은 유형의 **워게임**(Dreamhack)을 풀며 익스플로잇 코드를 직접 짠다
 3. 공개된 취약점을 **n-day로 재현**하고 원인과 대응까지 정리한다
 
-글은 모두 직접 쓰고, 실패한 시도도 함께 기록합니다. 진행 상황은 [security_report](https://github.com/junguk03/security_report)에 있습니다.
+글은 모두 직접 쓰고, 실패한 시도도 함께 기록합니다. 진행 상황은 [security_report](https://github.com/junguk03/security_report)에, 워게임·CTF 풀이 글은 [네이버 블로그](https://blog.naver.com/junkuk9503)에 있습니다.
 
 ## 다뤄 본 취약점
 

@@ -1,10 +1,10 @@
 # 사이트의 프로젝트·활동 데이터. 여기만 고치면 Home과 Projects 페이지에 같이 반영된다.
-# 원칙: 저장소나 기록으로 확인되는 사실만 적는다.
+# 원칙: 저장소, 블로그 글, 증빙 문서로 확인되는 사실만 적는다.
 
 # 공부 중 — PortSwigger 랩 → 같은 유형 워게임 → n-day 재현 순서 (security_report 저장소)
 studying:
   name: "PortSwigger Web Security Academy"
-  updated: "2026-11-11"
+  updated: "2026-11-13"
   repo: "https://github.com/junguk03/security_report"
   tracks:
     - { topic: "SQL injection (Blind 포함)", done: 3, total: 18 }
@@ -15,21 +15,38 @@ studying:
 # 주요 프로젝트
 projects:
   - name: "GlassHouse CTF"
-    role: "보안 동아리 · 4인 팀 · 팀장"
+    role: "보안 동아리 writeup · 4인 팀 · 팀장"
     period: "2026.10 ~"
-    desc: "Flask로 원서 접수 서비스를 직접 만들고, 2명씩 두 조로 나눠 취약점을 심은 문제를 출제한 뒤 상대 조와 바꿔 푸는 화이트박스 CTF 프로젝트입니다. 소스는 공개하고 플래그만 비공개로 둡니다."
+    desc: "Flask로 원서 접수 서비스를 직접 만들고, 2명씩 두 조로 나눠 서비스 사본에 취약점을 심은 문제를 출제한 뒤 상대 조와 바꿔 푸는 화이트박스 CTF 프로젝트입니다. 소스는 공개하고 플래그만 비공개로 둡니다."
     points:
-      - "공통 레이아웃·컴포넌트·메인 화면과 깃 관리 담당"
-      - "문제 8개 출제: IDOR, SQL Injection, 파일 다운로드, Broken Access Control, Mass Assignment, SSTI, Race Condition 등"
-      - "팀 가이드·CTF 규칙·출제 절차를 문서로 정리 (풀이는 교환이 끝난 뒤 공개)"
-    stack: ["Python", "Flask", "Jinja2", "Docker"]
+      - "공통 레이아웃·컴포넌트·메인 화면, 팀 개발 가이드·CTF 규칙·출제 절차 문서, 깃 관리 담당 (Pull Request로만 병합)"
+      - "직접 출제: 02-idor, 03-bac, 04-XSS · 팀 전체 문제 9개 (Easy 4, Medium 5)"
+      - "출제·풀이 과정을 블로그에 기록 (소개 1편, 출제 3편, 풀이 5편)"
+      - "수원대학교 IT 전공역량 강화 그룹활동 지원 프로그램 선발 (2026.10 ~ 12)"
+      - "12월 동아리 내부 대회용 CTFd 테마 제작"
+    stack: ["Python", "Flask", "Jinja2", "Docker", "CTFd"]
     links:
       - { label: "GitHub", url: "https://github.com/junguk03/Write_Up_GlassHouse" }
+      - { label: "소개 글", url: "https://blog.naver.com/junkuk9503/224449794694" }
+
+  - name: "Claude MCP Agent"
+    role: "개인 · 진행 중"
+    period: "2026.11 ~"
+    desc: "직접 만든 MCP 서버(lab-tools)를 Claude Code 에이전트에 연결해 로컬 Docker의 OWASP Juice Shop을 정찰하게 하고, 그 결과를 사람이 직접 검증하는 학습용 실험입니다."
+    points:
+      - "서버 코드에서 대상 제한: 127.0.0.1·localhost만 허용, 아스키 숫자만 받는 포트 검사, 리다이렉트 미추적, 응답 본문 4000바이트 제한"
+      - "모든 도구 호출을 허용·거부·오류로 나눠 감사 로그(audit.jsonl)에 기록"
+      - "첫 정찰(2026-11-13): 3000번 포트의 Juice Shop 확인, /ftp 디렉터리 목록이 인증 없이 열리는 것 관측"
+      - "4000바이트 제한 때문에 JS에서 API 경로 찾기는 실패 → 보완 계획을 IMPROVEMENTS.md에 정리"
+    stack: ["Python", "MCP", "Claude Code", "nmap", "Docker"]
+    links:
+      - { label: "GitHub", url: "https://github.com/junguk03/Claude_MCP_Agent" }
+      - { label: "정찰 보고서", url: "https://github.com/junguk03/Claude_MCP_Agent/blob/main/reports/261113_recon.md" }
 
   - name: "안심 계약 가디언 (GuardUp)"
     role: "한이음 드림업 2026 · 5인 팀 · 팀장"
-    period: "2026"
-    desc: "자립준비청년을 위한 AI 전세 계약서 분석 앱입니다. 계약서 사진을 OCR로 읽고, 개인정보를 마스킹한 뒤 공공 API와 GPT-4o + RAG로 위험 조항과 위험도를 알려줍니다."
+    period: "2026.04 ~ 2026.10"
+    desc: "자립준비청년을 위한 AI 전세 계약서 분석 앱입니다. 계약서 사진을 OCR로 읽고, 개인정보를 마스킹한 뒤 공공 API와 GPT-4o + RAG로 위험 조항과 위험도를 알려줍니다. Flutter 앱과 FastAPI 서버를 연동해 AWS EC2에 배포했습니다."
     points:
       - "Privacy-First 설계: 이름·주소는 KLUE-NER, 주민번호·전화번호는 정규식으로 마스킹하고 외부 LLM에는 마스킹된 텍스트만 전달"
       - "분석이 끝나면 원문 매핑 테이블 즉시 파기, Redis 세션 30분 TTL"
@@ -39,10 +56,10 @@ projects:
       - { label: "Backend", url: "https://github.com/Guard-Up/Guard_Up_Backend" }
       - { label: "App", url: "https://github.com/Guard-Up/Guard_Up_App" }
 
-# 워게임 익스플로잇 코드 (test_exploit_code 저장소)
+# 워게임 익스플로잇 코드 (test_exploit_code 저장소) + 풀이 글
 exploits:
   repo: "https://github.com/junguk03/test_exploit_code"
-  desc: "Dreamhack 워게임과 PortSwigger 랩을 풀면서 직접 작성한 Python 익스플로잇 코드입니다."
+  desc: "Dreamhack 워게임과 PortSwigger 랩을 풀면서 직접 작성한 Python 익스플로잇 코드와 풀이 글입니다."
   items:
     - { type: "NoSQL Injection", what: "MongoDB $regex로 FLAG 한 글자씩 추출, CouchDB _all_docs 조회, 객체 주입 인증 우회" }
     - { type: "SQL Injection", what: "Blind SQLi(substr)로 admin 비밀번호 추출 자동화" }
@@ -52,14 +69,52 @@ exploits:
     - { type: "Crypto", what: "AES-CBC Padding Oracle Attack으로 키 없이 암호문 복호화" }
     - { type: "로직 버그 / 접근제어", what: "대소문자 비교 미흡을 이용한 비밀번호 변경, Referer·헤더 조작 + 문서 ID 브루트포스" }
     - { type: "Authentication (PortSwigger)", what: "X-Forwarded-For로 IP 차단 우회, 에러 메시지·응답 시간 차이로 사용자명 열거" }
+  posts:
+    - { title: "Secret Data — Blind SQL Injection", url: "https://blog.naver.com/junkuk9503/224333268246" }
+    - { title: "Simple Note Manager", url: "https://blog.naver.com/junkuk9503/224335264636" }
+    - { title: "Another Ping", url: "https://blog.naver.com/junkuk9503/224335396921" }
+    - { title: "Tomcat Manager", url: "https://blog.naver.com/junkuk9503/224338403978" }
+    - { title: "NoSQL-CouchDB", url: "https://blog.naver.com/junkuk9503/224341863557" }
+    - { title: "baby-union", url: "https://blog.naver.com/junkuk9503/224343611136" }
+    - { title: "Switching Command", url: "https://blog.naver.com/junkuk9503/224347182327" }
+    - { title: "Padding Oracle", url: "https://blog.naver.com/junkuk9503/224370201618" }
+    - { title: "CProxy: Inject", url: "https://blog.naver.com/junkuk9503/224471416620" }
+    - { title: "Addition calculator", url: "https://blog.naver.com/junkuk9503/224474641184" }
+
+# 재현 · 제보 · 오픈소스 기여
+research:
+  - name: "Apache 경로 조작 (CVE-2021-41773) 재현"
+    kind: "n-day 재현"
+    date: "2026.09"
+    desc: "공개된 Apache HTTP Server 경로 조작 취약점을 재현하고 블로그에 정리했습니다."
+    links:
+      - { label: "재현 글", url: "https://blog.naver.com/junkuk9503/224414562448" }
+  - name: "flaskbb-plugin-conversations PR #1"
+    kind: "오픈소스 기여"
+    date: "2026.09"
+    desc: "require_message_box_space 함수에 남아 있던 디버그용 print 한 줄을 제거하는 PR이 master에 머지되었습니다. 동작 변화 없는 코드 정리 기여입니다."
+    links:
+      - { label: "PR", url: "https://github.com/flaskbb/flaskbb-plugin-conversations/pull/1" }
+  - name: "Neon 버그바운티 보고서 제출 (HackerOne)"
+    kind: "취약점 제보"
+    date: "2026.10 ~ 11"
+    desc: "보고서 1건을 제출했고, 심사 후 Informative로 종료되었습니다(취약점으로 인정되지 않음). 프로그램 규칙상 세부 내용은 공개하지 않습니다."
 
 # 활동
 activities:
-  - name: "WHITEHAT 2026"
+  - name: "WHITEHAT 2026 예선"
     date: "2026.11.07"
-    desc: "국방부 주최·사이버작전사령부 주관 사이버 보안 경진대회 대학생부, 팀 GlassHouse(수원대학교)로 온라인 예선 참가."
+    desc: "국방부 주최·사이버작전사령부 주관 사이버 보안 경진대회 대학생부 온라인 예선에 4인 팀 GlassHouse로 참가. 웹 Thumbnail, 포렌식 SNAFU를 직접 풀었고 팀 결과는 900점, 대학생부 64등입니다."
     links:
+      - { label: "풀이 글", url: "https://blog.naver.com/junkuk9503/224470305727" }
       - { label: "대회 페이지", url: "https://whitehat2026.kr" }
+  - name: "수원대 IT 그룹활동 지원 프로그램"
+    date: "2026.10"
+    desc: "IT 전공역량 강화를 위한 그룹활동 지원 프로그램에 GlassHouse 팀(4인, 팀장)으로 선발되어 2026년 12월까지 활동."
+
+# 자격증
+certs:
+  - { name: "정보처리기능사", issuer: "한국산업인력공단", date: "2024.04", note: "현 종목명 프로그래밍기능사" }
 
 # 기타 프로젝트 — 간단한 설명만 (이력서에는 넣지 않음)
 others:

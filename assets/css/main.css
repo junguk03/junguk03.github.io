@@ -62,6 +62,12 @@ h3{font-size:18px;margin:0}
 .vulns{display:grid;grid-template-columns:200px minmax(0,1fr);gap:6px 16px;margin:12px 0;font-size:15.5px}
 .vulns dt{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:13.5px;font-weight:600;padding-top:2px}
 .vulns dd{margin:0;color:var(--muted)}
+.post-links{display:flex;flex-wrap:wrap;gap:4px 14px;list-style:none;padding:0;margin:4px 0 10px;font-size:14.5px}
+.research{list-style:none;padding:0;margin:0}
+.research li{padding:12px 0;border-bottom:1px solid var(--line)}
+.research li>p:last-child{margin:2px 0 0;font-size:15.5px;color:var(--muted)}
+.research .meta{margin:0}
+.kind{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12.5px;color:var(--accent)}
 .others{list-style:none;padding:0;margin:0}
 .others li{padding:12px 0;border-bottom:1px solid var(--line)}
 .others p{margin:2px 0 0;font-size:15.5px;color:var(--muted)}

@@ -23,7 +23,13 @@
     {{ range $d.projects }}{{ partial "project-card.html" . }}{{ end }}
     {{ partial "exploits.html" . }}
   </div>
-  <p><a href="{{ "/projects/" | relURL }}">활동·기타 프로젝트까지 보기 →</a></p>
+  <p><a href="{{ "/projects/" | relURL }}">자격증·기타 프로젝트까지 보기 →</a></p>
+</section>
+
+<section>
+  <p class="cmd"><span class="prompt">$</span> ls ./research</p>
+  <h2>재현 · 제보 · 기여</h2>
+  {{ partial "research.html" . }}
 </section>
 
 <section>
