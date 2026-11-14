@@ -34,14 +34,18 @@ projects:
     period: "2026.11 ~"
     desc: "직접 만든 MCP 서버(lab-tools)를 Claude Code 에이전트에 연결해 로컬 Docker의 OWASP Juice Shop을 정찰하게 하고, 그 결과를 사람이 직접 검증하는 학습용 실험입니다."
     points:
-      - "서버 코드에서 대상 제한: 127.0.0.1·localhost만 허용, 아스키 숫자만 받는 포트 검사, 리다이렉트 미추적, 응답 본문 4000바이트 제한"
-      - "모든 도구 호출을 허용·거부·오류로 나눠 감사 로그(audit.jsonl)에 기록"
-      - "첫 정찰(2026-11-13): 3000번 포트의 Juice Shop 확인, /ftp 디렉터리 목록이 인증 없이 열리는 것 관측"
-      - "4000바이트 제한 때문에 JS에서 API 경로 찾기는 실패 → 보완 계획을 IMPROVEMENTS.md에 정리"
+      - "도구 4개(port_scan, http_get, extract_links, find_in_page). 요청은 http://127.0.0.1:3000·localhost:3000과 완전히 일치할 때만 허용하고, 모든 호출을 허용·거부·오류로 나눠 감사 로그에 기록"
+      - "첫 정찰에서 본문 4000바이트 제한 때문에 JS의 API 경로를 못 찾음 → 서버가 본문 전체(최대 5MB)를 읽고 서버에 고정된 패턴으로 필요한 것만 돌려주는 도구 추가"
+      - "같은 지시문으로 5회 실험: 새 도구 4회(Fable 5.2, Sonnet 5.5 각 2회)는 모두 정답지 API 경로 41개를 찾고 규칙 위반 0건, 옛 도구는 요청 3회 후 멈춤 → 결과를 가른 건 모델보다 도구 설계"
+      - "Sonnet 5.5가 Fable 5.2의 약 1/4 비용으로 같은 경로를 찾음"
+      - "에이전트가 보고한 /rest/memories를 직접 확인: 인증 없이 사진을 올린 사용자 5명의 이메일·비밀번호 해시 등이 응답에 포함 (OWASP API3)"
     stack: ["Python", "MCP", "Claude Code", "nmap", "Docker"]
     links:
       - { label: "GitHub", url: "https://github.com/junguk03/Claude_MCP_Agent" }
-      - { label: "정찰 보고서", url: "https://github.com/junguk03/Claude_MCP_Agent/blob/main/reports/261113_recon.md" }
+      - { label: "실험 ① 첫 정찰", url: "https://blog.naver.com/junkuk9503/224476956163" }
+      - { label: "② 4000바이트 문제", url: "https://blog.naver.com/junkuk9503/224477436421" }
+      - { label: "③ 정찰 규칙", url: "https://blog.naver.com/junkuk9503/224477448075" }
+      - { label: "④ 5회 실험", url: "https://blog.naver.com/junkuk9503/224477487866" }
 
   - name: "안심 계약 가디언 (GuardUp)"
     role: "한이음 드림업 2026 · 5인 팀 · 팀장"

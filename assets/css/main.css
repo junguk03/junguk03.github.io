@@ -49,7 +49,7 @@ h3{font-size:18px;margin:0}
 .meta{font-size:14px;color:var(--muted);margin:2px 0 0}
 .chips{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:10px 0}
 .chips li{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12px;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--ink)}
-.card-links{display:flex;gap:14px;font-size:15px;margin-bottom:0}
+.card-links{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:15px;margin-bottom:0}
 .card h3+.meta{margin-top:4px}
 .points{margin:10px 0;padding-left:1.2em;font-size:15.5px}
 .points li{margin:2px 0}
