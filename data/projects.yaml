@@ -118,6 +118,7 @@ certs:
 
 # 기타 프로젝트 — 간단한 설명만 (이력서에는 넣지 않음)
 others:
+  - { name: "Planner (사용 중)", desc: "직접 쓰려고 만든 일정·메모 캘린더 웹앱. 월간·주간 뷰, 일정 추가·수정·삭제, 드래그로 날짜·시간 이동, 캘린더 위에 고정하는 메모, 튜토리얼. Supabase로 데이터 관리와 기기 간 동기화, Vercel로 배포.", url: "https://github.com/junguk03/planner", demo: "https://planner-blond-seven.vercel.app" }
   - { name: "한국어 프롬프트 인젝션 측정 (KPI-Rules)", desc: "한국어 공격 프롬프트 300여 건을 모아 LLM이 얼마나 막는지 측정한 실험. 첫 측정에서 Haiku 4.5 기준 300건 중 6건 우회(픽션 프레이밍, 시스템 프롬프트 누출).", url: "https://github.com/junguk03/Prompt_Injection_Solution" }
   - { name: "LLM 코드 취약점 스캐너", desc: "Gemini API로 소스코드를 분석해 CWE 기준으로 취약점·심각도·수정 방법을 출력하는 CLI 도구.", url: "https://github.com/junguk03/CVE_Vulnerability_Tools" }
   - { name: "Clash Royale 전적 검색", desc: "Supercell API로 플레이어 정보와 전투 기록을 조회하는 서비스. Node.js Express 백엔드 + Flutter Web.", url: "https://github.com/junguk03/ClashRoyalProject" }

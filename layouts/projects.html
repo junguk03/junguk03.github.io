@@ -45,7 +45,7 @@
   <p class="muted">개발 위주로 진행했거나 짧게 실험해 본 개인 프로젝트입니다.</p>
   <ul class="others">
     {{ range $d.others }}
-    <li><a href="{{ .url }}"><b>{{ .name }}</b></a><p>{{ .desc }}</p></li>
+    <li><a href="{{ .url }}"><b>{{ .name }}</b></a>{{ with .demo }} · <a href="{{ . }}">사이트 →</a>{{ end }}<p>{{ .desc }}</p></li>
     {{ end }}
   </ul>
 </section>
